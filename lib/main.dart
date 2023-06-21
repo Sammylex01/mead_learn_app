@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:mead_learn_app/src/core/routes/route_manager.dart';
 import 'package:mead_learn_app/src/features/splash.dart';
@@ -14,16 +16,52 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mead Learn App',
-      initialRoute: AppRoutes.splashRoute,
+      onGenerateRoute: RouteGenerator.getRoute,
+        initialRoute: AppRoutes.splashRoute,
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      home: MyHomePage(title: 'Mead Learn App',),
     );
   }
 }
+
+// class MyHomePage extends StatefulWidget {
+//   @override
+//   _MyHomePageState createState() => _MyHomePageState();
+// }
+// class _MyHomePageState extends State<MyHomePage> {
+//   @override
+//   void initState() {
+//     super.initState();
+//     Timer(Duration(seconds: 3),
+//             ()=>Navigator.pushReplacement(context,
+//             MaterialPageRoute(builder:
+//                 (context) =>
+//                 SecondScreen()
+//             )
+//         )
+//     );
+//   }
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//         color: Colors.white,
+//         child:FlutterLogo(size:MediaQuery.of(context).size.height)
+//     );
+//   }
+// }
+// class SecondScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title:Text("Mead Learn App")),
+//       body: Center(
+//           child:Text("Mead Learn App",textScaleFactor: 2,)
+//       ),
+//     );
+//   }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -53,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             TextButton(
               style: TextButton.styleFrom(
-                foregroundColor: Colors.grey,
+                backgroundColor: Colors.grey,
                 textStyle: const TextStyle(fontSize: 20),
                 padding: const EdgeInsets.all(16.0),
               ),

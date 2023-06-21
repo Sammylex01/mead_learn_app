@@ -18,7 +18,7 @@ class _AppMainMenuState extends State<AppMainMenu> {
           TextButton(
             style: TextButton.styleFrom(
               foregroundColor: Colors.grey,
-              textStyle: const TextStyle(fontSize: 20),
+              textStyle: const TextStyle(fontSize: 20, color: Colors.black),
               padding: const EdgeInsets.all(16.0),
             ),
             onPressed: () {},
@@ -27,8 +27,8 @@ class _AppMainMenuState extends State<AppMainMenu> {
           const SizedBox(height: 30),
           TextButton(
             style: TextButton.styleFrom(
-              foregroundColor: Colors.grey,
-              textStyle: const TextStyle(fontSize: 20),
+              backgroundColor: Colors.grey,
+              textStyle: const TextStyle(fontSize: 20, color: Colors.black),
               padding: const EdgeInsets.all(16.0),
             ),
             onPressed: () {},
@@ -38,7 +38,7 @@ class _AppMainMenuState extends State<AppMainMenu> {
           TextButton(
             style: TextButton.styleFrom(
               foregroundColor: Colors.grey,
-              textStyle: const TextStyle(fontSize: 20),
+              textStyle: const TextStyle(fontSize: 20, color: Colors.black),
               padding: const EdgeInsets.all(16.0),
             ),
             onPressed: () {},
@@ -48,7 +48,7 @@ class _AppMainMenuState extends State<AppMainMenu> {
           TextButton(
             style: TextButton.styleFrom(
               foregroundColor: Colors.grey,
-              textStyle: const TextStyle(fontSize: 20),
+              textStyle: const TextStyle(fontSize: 20, color: Colors.black),
               padding: const EdgeInsets.all(16.0),
             ),
             onPressed: () {},
