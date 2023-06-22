@@ -7,6 +7,7 @@ import 'package:mead_learn_app/main.dart';
 import 'package:mead_learn_app/main_menu.dart';
 import 'package:mead_learn_app/src/core/routes/route_manager.dart';
 import 'package:mead_learn_app/src/core/utilities/images.dart';
+import 'package:mead_learn_app/src/features/auth/views/auth_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
             () =>
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder:
-                    (context) => AppMainMenu()
+                    (context) => AuthScreen()
                 )
             )
     );
@@ -40,13 +41,12 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.white,
       body: Center(
           child:
-          FlutterLogo(size:MediaQuery.of(context).size.height)
-          // Container(
-          //     height: 30,
-          //     width: size.width * 0.6,
-          //     decoration: const BoxDecoration(
-          //         image: DecorationImage(
-          //             image: AssetImage(splashImage), fit: BoxFit.fill)))),
-    ));
+          Container(
+              height: 30,
+              width: size.width * 0.6,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(splashImage), fit: BoxFit.fill)))),
+    );
   }
 }

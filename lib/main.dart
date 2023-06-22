@@ -27,42 +27,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// class MyHomePage extends StatefulWidget {
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-// }
-// class _MyHomePageState extends State<MyHomePage> {
-//   @override
-//   void initState() {
-//     super.initState();
-//     Timer(Duration(seconds: 3),
-//             ()=>Navigator.pushReplacement(context,
-//             MaterialPageRoute(builder:
-//                 (context) =>
-//                 SecondScreen()
-//             )
-//         )
-//     );
-//   }
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//         color: Colors.white,
-//         child:FlutterLogo(size:MediaQuery.of(context).size.height)
-//     );
-//   }
-// }
-// class SecondScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title:Text("Mead Learn App")),
-//       body: Center(
-//           child:Text("Mead Learn App",textScaleFactor: 2,)
-//       ),
-//     );
-//   }
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -77,12 +41,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
-        title: Text(widget.title),
-      ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
