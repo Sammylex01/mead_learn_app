@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mead_learn_app/main_menu.dart';
+import 'package:mead_learn_app/src/core/utilities/app_colors.dart';
 import 'package:mead_learn_app/src/core/utilities/images.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -62,18 +63,22 @@ class _AuthScreenState extends State<AuthScreen> {
                     onPressed: () {
                       //forgot password screen
                     },
-                    child: const Text('Forgot Password?',  ),
+                    child: const Text('Forgot Password?',
+                    style: TextStyle(color: Colors.blue),),
                   ),
                   Container(
                       height: 50,
                       width: 200,
                       padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                       child: ElevatedButton(
-                        child: const Text('Login',
+                        child:const Text('Login',
                             style: TextStyle(fontSize: 16)),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.purple,
+                          backgroundColor: Colors.deepPurple,
                           foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          )
                         ),
                         onPressed: () {
                           Navigator.push(
@@ -84,20 +89,82 @@ class _AuthScreenState extends State<AuthScreen> {
                         },
                       )
                   ),
-                  Row(
-                    children: <Widget>[
-                      const Text('Does not have account?'),
-                      TextButton(
-                        child: const Text(
-                          'Sign in',
-                          style: TextStyle(fontSize: 20),
+                  // Expanded(
+                  //   child: Column(
+                  //     children: <Widget>[
+                  //
+                  //       TextButton(
+                  //         child: const Text(
+                  //           'Create Account',
+                  //           style: TextStyle(fontSize: 20),
+                  //         ),
+                  //         onPressed: () {
+                  //           //signup screen
+                  //         },
+                  //       )
+                  //     ],
+                  //   ),
+                  // ),
+                  Expanded(
+                    child: Column(
+                      children: <Widget>[
+                        Divider(
+                          color: Colors.grey,
                         ),
-                        onPressed: () {
-                          //signup screen
-                        },
-                      )
-                    ],
-                  ),
+                        Container(
+                            padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                          margin: const EdgeInsets.fromLTRB(90, 0, 90, 0),
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: ElevatedButton(
+                                child:const Text('Google',
+                                    style: TextStyle(fontSize: 16)),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.red,
+                                  foregroundColor: Colors.white,
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              AppMainMenu()));
+                                },
+                              ),
+                            ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          margin: const EdgeInsets.fromLTRB(0, 0, 90, 0),
+                          child: Align(alignment: Alignment.bottomRight,
+                            child: ElevatedButton(
+                              child:const Text('Teams',
+                                  style: TextStyle(fontSize: 16)),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.blueAccent,
+                                foregroundColor: Colors.white,
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            AppMainMenu()));
+                              },
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          child: const Text(
+                            'Create Account',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                          onPressed: () {
+                            //signup screen
+                          },
+                        ),
+                      ],
+                  ),),
                 ]
             ),
 

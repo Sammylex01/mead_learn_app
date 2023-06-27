@@ -1,5 +1,6 @@
 //splash
 const String splashImage = "assets/images/logo.png";
+const String appBg = "assets/svg/bg.svg";
 
 //login
 const String loginBgImage = "assets/images/login_bg.png";
