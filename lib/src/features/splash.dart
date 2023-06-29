@@ -8,6 +8,7 @@ import 'package:mead_learn_app/main_menu.dart';
 import 'package:mead_learn_app/src/core/routes/route_manager.dart';
 import 'package:mead_learn_app/src/core/utilities/images.dart';
 import 'package:mead_learn_app/src/features/auth/views/auth_screen.dart';
+import 'package:mead_learn_app/src/features/auth/views/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

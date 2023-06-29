@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mead_learn_app/main_menu.dart';
 import 'package:mead_learn_app/src/core/utilities/app_colors.dart';
 import 'package:mead_learn_app/src/core/utilities/images.dart';
+import 'package:mead_learn_app/src/features/auth/views/login_screen.dart';
+import 'package:mead_learn_app/src/features/auth/views/signup_screen.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({Key? key}): super(key: key);
@@ -160,7 +162,11 @@ class _AuthScreenState extends State<AuthScreen> {
                             style: TextStyle(fontSize: 12),
                           ),
                           onPressed: () {
-                            //signup screen
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        SignUp()));
                           },
                         ),
                       ],
