@@ -26,10 +26,26 @@ class SignUp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    appBar: AppBar(
+      backgroundColor: Colors.white,
+      centerTitle: true,
+      title: Text(
+        "Sign Up",
+        style: heading2(context),
+      ),
+      leading: IconButton(
+      onPressed: () => Navigator.of(context).pop(),
+      icon: Icon(
+        Icons.arrow_back,
+        color: kTextColor,
+        size: heading2(context).height,
+      ),
+    ),
+    ),
       body: AppBackground(
         child: Expanded(
-          child: GetBuilder<SignupController>(
-              init: SignupController(),
+          child: GetBuilder<SignUpController>(
+              init: SignUpController(),
               builder: (controller) {
                 return Form(
                   key: _formKey,
@@ -48,11 +64,6 @@ class SignUp extends StatelessWidget{
                                   .copyWith(fontFamily: "Roboto"),
                             ),
                             kMediumVerticalSpacing,
-                            Text(
-                              "Sign up",
-                              style: heading2(context),
-                            ),
-                            kMediumVerticalSpacing,
                             AppTextField(
                               keyboardType: TextInputType.text,
                               textInputAction: TextInputAction.next,
@@ -60,7 +71,7 @@ class SignUp extends StatelessWidget{
                               controller: firstNameController,
                               validator: (value) =>
                                   context.validateFieldNotEmpty(value),
-                              hintText: "First name",
+                              hintText: "Your first name",
                             ),
                             kSmallVerticalSpacing,
                             AppTextField(
@@ -68,9 +79,9 @@ class SignUp extends StatelessWidget{
                               textInputAction: TextInputAction.next,
                               label: "Last name",
                               controller: lastNameController,
-                              // validator: (value) =>
-                              //     context.validateFieldNotEmpty(value),
-                              hintText: "Last name",
+                              validator: (value) =>
+                                  context.validateFieldNotEmpty(value),
+                              hintText: "Your last name",
                             ),
                             kSmallVerticalSpacing,
                             AppTextField(
@@ -78,9 +89,9 @@ class SignUp extends StatelessWidget{
                               textInputAction: TextInputAction.next,
                               label: "Email",
                               controller: emailController,
-                              // validator: (value) =>
-                              //     context.validateEmailAddress(value),
-                              hintText: "Email",
+                              validator: (value) =>
+                                  context.validateEmailAddress(value),
+                              hintText: "study@email.com",
                             ),
                             kSmallVerticalSpacing,
                             AppTextField(
@@ -88,9 +99,9 @@ class SignUp extends StatelessWidget{
                               textInputAction: TextInputAction.next,
                               label: "Password",
                               controller: passwordController,
-                              // validator: (value) =>
-                              //     context.validatePassword(value),
-                              hintText: "Password",
+                              validator: (value) =>
+                                  context.validatePassword(value),
+                              hintText: "Your password",
                               obscureText: controller.visibility,
                               suffixIcon: IconButton(
                                 icon: controller.visibility
@@ -124,11 +135,11 @@ class SignUp extends StatelessWidget{
                             AppTextField(
                               keyboardType: TextInputType.text,
                               textInputAction: TextInputAction.next,
-                              // validator: (value) =>
-                              //     context.validatePhoneNumber(value),
+                              validator: (value) =>
+                                  context.validatePhoneNumber(value),
                               controller: phoneController,
                               label: "Phone number",
-                              hintText: "Phone number",
+                              hintText: "080xxxxxxx",
                             ),
                             kMediumVerticalSpacing,
                             // Text(
@@ -136,29 +147,30 @@ class SignUp extends StatelessWidget{
                             //   style: bodySmallText(context).copyWith(color: Colors.grey),
                             // ),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text("I agree with the  ", style: bodyTinyText(context)),
+                              // mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text("I agree with the ",
+                                    textDirection: TextDirection.rtl,
+                                    textAlign: TextAlign.justify,
+                                    style: bodyTinyText(context)
+                                ),
                                 InkWell(
                                   onTap: () => Navigator.of(context).pushNamed(
                                       AppRoutes.authScreenRoute),
                                   child: Text(
-                                    "terms and conditions ",
+                                    " terms and conditions ",
                                     style: bodyTinyText(context)
-                                        .copyWith(color: kPrimaryColor),
-                                  ),
+                                        .copyWith(color: kBlue2)),
                                 ),
-                                Text("also the protection of my personal data",
-                                  style: bodyTinyText(context),
-                                )
-                              ],
+
+                              ]
                             ),
                             kLargeVerticalSpacing,
                             Row(
                               children: [
                                 Expanded(
                                   child: AppButton(
-                                    color: kLightBlueColor,
+                                    color: Color(0xFF52B6DF),
                                     label: "Sign Up",
                                     isLoading: controller.state.isLoading,
                                     onPressed: () async {
@@ -220,7 +232,6 @@ class SignUp extends StatelessWidget{
                                     ),
                                   ),
                                 ]),
-                            kSmallVerticalSpacing,
                           ]),
                     ),
                   ),
@@ -230,5 +241,4 @@ class SignUp extends StatelessWidget{
       ),
     );
   }
-
 }
