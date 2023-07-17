@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:mead_learn_app/src/core/utilities/app_colors.dart';
 import 'package:mead_learn_app/src/core/utilities/app_spacing.dart';
 
-class CoursePill extends StatelessWidget {
+class SubjectPill extends StatelessWidget {
   final String title;
-  final IconData icon;
-  const CoursePill({Key? key, required this.title, required this.icon})
+  final String image;
+  const SubjectPill({Key? key, required this.title, required this.image})
       : super(key: key);
 
   @override
@@ -26,19 +26,14 @@ class CoursePill extends StatelessWidget {
                 ),
               ],
             ),
-            child: Icon(
-              icon,
-              color: kPrimaryColor,
-            )),
+            // child: NetworkImage(image),
+            // child: Icon(
+            //   icon,
+            //   color: kPrimaryColor,
+            // )
+        ),
         kTinyVerticalSpacing,
         Center(
-          // child: TextButton(
-          //   onPressed: () {  },
-          //   child: Text(
-          //     title,
-          //   ),
-          //
-          // ),
             child: Text(
               title,
               textAlign: TextAlign.center,

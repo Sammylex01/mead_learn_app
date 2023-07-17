@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mead_learn_app/src/core/utilities/app_spacing.dart';
+import 'package:mead_learn_app/src/features/auth/views/auth_screen.dart';
 
 import 'src/core/utilities/app_colors.dart';
 import 'src/core/utilities/app_textstyle.dart';
-import 'src/features/widgets/coursepill.dart';
 
 class AppMainMenu extends StatefulWidget {
   const AppMainMenu({Key? key}): super(key: key);
@@ -11,34 +12,38 @@ class AppMainMenu extends StatefulWidget {
   State<AppMainMenu> createState() => _AppMainMenuState();
 }
 
+class SubjectPill {
+  final String image;
+  final String title;
+  SubjectPill({Key? key, required this.title, required this.image});
+}
+
 class _AppMainMenuState extends State<AppMainMenu> {
 
   @override
   Widget build(BuildContext context) {
-    List<CoursePill> coursePill = [
-      CoursePill(title: "Maths", icon: Icons.assessment_outlined),
-      CoursePill(title: "Physics", icon: Icons.cable_outlined),
-      CoursePill(title: "Biology", icon: Icons.medical_services_outlined),
-      CoursePill(title: "Civic", icon: Icons.handshake_outlined),
-      CoursePill(title: "Chemistry", icon: Icons.assessment_outlined),
-      CoursePill(title: "Economics", icon: Icons.assessment_outlined),
-      CoursePill(title: "English", icon: Icons.assessment_outlined),
-      CoursePill(title: "Geography", icon: Icons.assessment_outlined),
-      CoursePill(title: "Catering", icon: Icons.lunch_dining_outlined),
-      CoursePill(title: "History", icon: Icons.assessment_outlined),
-      CoursePill(title: "Business Studies", icon: Icons.assessment_outlined),
-      CoursePill(title: "Auto Mech", icon: Icons.handyman_outlined),
-      CoursePill(title: "G.P", icon: Icons.assessment_outlined),
-      CoursePill(title: "Accounting", icon: Icons.assessment_outlined),
-      CoursePill(title: "P.E", icon: Icons.assessment_outlined),
-      CoursePill(title: "Add-Maths", icon: Icons.assessment_outlined),
-      CoursePill(title: "Sociology", icon: Icons.assessment_outlined),
-      CoursePill(title: "French", icon: Icons.assessment_outlined),
-      CoursePill(title: "Mandarin", icon: Icons.assessment_outlined),
-      CoursePill(title: "R.E", icon: Icons.assessment_outlined),
-      CoursePill(title: "Music", icon: Icons.assessment_outlined),
-
-
+    List<SubjectPill> subjectPill = [
+      SubjectPill(title: "Maths", image: "https://images.pexels.com/photos/5222/snow-mountains-forest-winter.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
+      SubjectPill(title: "Physics", image: "https://images.pexels.com/photos/5222/snow-mountains-forest-winter.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
+      SubjectPill(title: "Biology", image: "https://images.pexels.com/photos/5222/snow-mountains-forest-winter.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
+      SubjectPill(title: "Civic", image: "https://images.pexels.com/photos/5222/snow-mountains-forest-winter.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
+      SubjectPill(title: "Chemistry", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view?usp=sharing"),
+      SubjectPill(title: "Economics", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "English", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "Geography", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "Catering", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "History", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "Business Studies", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "Auto Mech", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "G.P", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "Accounting", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "P.E", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "Add-Maths", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "Sociology", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "French", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "Mandarin", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "R.E", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "Music", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
 
     ];
     return Scaffold(
@@ -76,10 +81,50 @@ class _AppMainMenuState extends State<AppMainMenu> {
                 mainAxisSpacing: 4,
                 crossAxisSpacing: 5,
               ),
-              itemCount: coursePill.length,
-              itemBuilder: (context, index) => CoursePill(
-                  title: coursePill[index].title,
-                  icon: coursePill[index].icon),
+              itemCount: subjectPill.length,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AuthScreen()
+                          ),
+                        );
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(24),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(subjectPill[index].image),
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          color: kWhiteColor,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(0xFFEEEEEE),
+                              spreadRadius: 6,
+                              blurRadius: 10,
+                            ),
+                          ]
+                        ),
+                      ),
+                    ),
+                    kTinyVerticalSpacing,
+                    Center(
+                        child: Text(
+                          subjectPill[index].title,
+                          textAlign: TextAlign.center,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                        )
+                    ),
+                  ],
+                );
+              }
             ),
           ),
         ],
