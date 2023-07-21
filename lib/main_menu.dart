@@ -39,12 +39,12 @@ class _AppMainMenuState extends State<AppMainMenu> {
       SubjectPill(title: "G.P", image: "images/G.P_icon.png"),
       SubjectPill(title: "Accounting", image: "images/accounting_icon.png"),
       SubjectPill(title: "P.E", image: "images/P.E_icon.png"),
-      SubjectPill(title: "Add-Maths", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "Sociology", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "French", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "Mandarin", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "R.E", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "Music", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "Add-Maths", image: "images/add-maths_icon.png"),
+      SubjectPill(title: "Sociology", image: "images/sociology_icon.png"),
+      SubjectPill(title: "French", image: "images/french_icon.png"),
+      SubjectPill(title: "Mandarin", image: "images/mandarin_icon.png"),
+      SubjectPill(title: "R.E", image: "images/R.E_icon.png"),
+      SubjectPill(title: "Music", image: "images/music_icon.png"),
 
     ];
     return Scaffold(
