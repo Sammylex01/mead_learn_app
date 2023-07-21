@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mead_learn_app/src/core/utilities/app_spacing.dart';
 import 'package:mead_learn_app/src/features/auth/views/auth_screen.dart';
+import 'package:mead_learn_app/src/features/widgets/dynamic_screen.dart';
 
 import 'src/core/utilities/app_colors.dart';
 import 'src/core/utilities/app_textstyle.dart';
@@ -23,21 +24,21 @@ class _AppMainMenuState extends State<AppMainMenu> {
   @override
   Widget build(BuildContext context) {
     List<SubjectPill> subjectPill = [
-      SubjectPill(title: "Maths", image: "https://images.pexels.com/photos/5222/snow-mountains-forest-winter.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-      SubjectPill(title: "Physics", image: "https://images.pexels.com/photos/5222/snow-mountains-forest-winter.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-      SubjectPill(title: "Biology", image: "https://images.pexels.com/photos/5222/snow-mountains-forest-winter.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-      SubjectPill(title: "Civic", image: "https://images.pexels.com/photos/5222/snow-mountains-forest-winter.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"),
-      SubjectPill(title: "Chemistry", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view?usp=sharing"),
-      SubjectPill(title: "Economics", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "English", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "Geography", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "Catering", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "History", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "Business Studies", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "Auto Mech", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "G.P", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "Accounting", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
-      SubjectPill(title: "P.E", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
+      SubjectPill(title: "Maths", image: "images/maths_icon.png"),
+      SubjectPill(title: "Physics", image: "images/physics_icon.png"),
+      SubjectPill(title: "Biology", image: "images/biology_icon.png"),
+      SubjectPill(title: "Civic", image: "images/civic_icon.png"),
+      SubjectPill(title: "Chemistry", image: "images/chemistry_icon.png"),
+      SubjectPill(title: "Economics", image: "images/economics_icon.png"),
+      SubjectPill(title: "English", image: "images/english_icon.png"),
+      SubjectPill(title: "Geography", image: "images/geography_icon.png"),
+      SubjectPill(title: "Catering", image: "images/catering_icon.png"),
+      SubjectPill(title: "History", image: "images/history_icon.png"),
+      SubjectPill(title: "Business Studies", image: "images/bus_studies_icon.png"),
+      SubjectPill(title: "Auto Mech", image: "images/auto_mech_icon.png"),
+      SubjectPill(title: "G.P", image: "images/G.P_icon.png"),
+      SubjectPill(title: "Accounting", image: "images/accounting_icon.png"),
+      SubjectPill(title: "P.E", image: "images/P.E_icon.png"),
       SubjectPill(title: "Add-Maths", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
       SubjectPill(title: "Sociology", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
       SubjectPill(title: "French", image: "https://drive.google.com/file/d/1Uvd_iboxZBmAgHwiH36Z5310UqrQtsrt/view"),
@@ -75,9 +76,9 @@ class _AppMainMenuState extends State<AppMainMenu> {
                   right: 24, top: 8, bottom: 1, left: 16),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
-                childAspectRatio: MediaQuery.of(context).textScaleFactor < 1.6
-                    ? 2 / 3
-                    : 4 / 8,
+                // childAspectRatio: MediaQuery.of(context).textScaleFactor < 1.6
+                //     ? 2 / 3
+                //     : 4 / 8,
                 mainAxisSpacing: 4,
                 crossAxisSpacing: 5,
               ),
@@ -90,16 +91,17 @@ class _AppMainMenuState extends State<AppMainMenu> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => AuthScreen()
+                              builder: (context) => DynamicScreen(title: subjectPill[index].title,
+                                  image: subjectPill[index].image )
                           ),
                         );
                       },
                       child: Container(
-                        padding: EdgeInsets.all(24),
+                        padding: EdgeInsets.all(30),
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage(subjectPill[index].image),
+                            // fit: BoxFit.cover,
+                            image: AssetImage(subjectPill[index].image),
                           ),
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                           color: kWhiteColor,

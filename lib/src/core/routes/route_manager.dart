@@ -4,6 +4,7 @@ import 'package:mead_learn_app/main_menu.dart';
 import 'package:mead_learn_app/src/features/auth/views/auth_screen.dart';
 import 'package:mead_learn_app/src/features/auth/views/login_screen.dart';
 import 'package:mead_learn_app/src/features/auth/views/signup_screen.dart';
+import 'package:mead_learn_app/src/features/auth/views/terms_and_condition_screen.dart';
 import 'package:mead_learn_app/src/features/auth/views/verify_email.dart';
 import 'package:mead_learn_app/src/features/splash.dart';
 
@@ -14,6 +15,7 @@ class AppRoutes {
   static const String loginRoute = "/loginScreen";
   static const String signupRoute = "/signupScreen";
   static const String authScreenRoute = "/authScreen";
+  static const String termsAndConditionRoute = "/termsAndConditionScreen";
 }
 
 class RouteGenerator {
@@ -31,6 +33,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_)=> SignUp());
       case AppRoutes.authScreenRoute:
         return MaterialPageRoute(builder: (_)=> AuthScreen());
+      case AppRoutes.termsAndConditionRoute:
+        return MaterialPageRoute(builder: (_)=> TermsAndConditionScreen());
       default:
         return unDefinedRoute();
     }

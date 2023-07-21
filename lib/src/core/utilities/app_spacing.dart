@@ -13,6 +13,8 @@ const kLargeVerticalSpacing = SizedBox(height: 32);
 
 const kExtraLargeVerticalSpacing = SizedBox(height: 64);
 
+const kExtraExtraLargeVerticalSpacing = SizedBox(height:  96);
+
 /// Horizontal Spacings
 const kTinyHorizontalSpacing = SizedBox(width: 4.0);
 

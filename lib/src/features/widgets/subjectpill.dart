@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:mead_learn_app/src/features/widgets/dynamic_screen.dart';
 
 class SubjectItem {
   final String image;
@@ -75,7 +76,7 @@ class SubjectPill extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => RouteTwo(
+                  builder: (context) => DynamicScreen(
                       image: _items[index].image, title: _items[index].name),
                 ),
               );

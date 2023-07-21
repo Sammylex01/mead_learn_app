@@ -113,7 +113,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
                                               child: Text("Forgot Password?",
                                                 style: bodyTinyText(context)
-                                                    .copyWith(fontFamily: "Roboto",),)
+                                                    .copyWith(fontFamily: "Roboto", color: Colors.lightBlue))
                                             ),
                                           ),
                                           kSmallVerticalSpacing,
@@ -210,6 +210,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                                   ),
                                                 ),
                                               ),
+                                              kTinyVerticalSpacing,
                                               TextButton(
                                                 child: const Text(
                                                   'Create Account',

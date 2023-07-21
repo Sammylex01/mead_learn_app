@@ -30,7 +30,7 @@ class AppButton extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
         ),

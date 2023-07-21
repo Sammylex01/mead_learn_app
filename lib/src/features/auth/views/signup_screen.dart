@@ -147,7 +147,7 @@ class SignUp extends StatelessWidget{
                             //   style: bodySmallText(context).copyWith(color: Colors.grey),
                             // ),
                             Row(
-                              // mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text("I agree with the ",
                                     textDirection: TextDirection.rtl,
@@ -156,14 +156,26 @@ class SignUp extends StatelessWidget{
                                 ),
                                 InkWell(
                                   onTap: () => Navigator.of(context).pushNamed(
-                                      AppRoutes.authScreenRoute),
+                                      AppRoutes.termsAndConditionRoute),
                                   child: Text(
                                     " terms and conditions ",
                                     style: bodyTinyText(context)
                                         .copyWith(color: kBlue2)),
                                 ),
-
+                                Text(" also the protection of my personal data ",
+                                    textDirection: TextDirection.rtl,
+                                    textAlign: TextAlign.justify,
+                                    style: bodyTinyText(context)
+                                ),
                               ]
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "on this application",
+                                style: bodyTinyText(context)
+                                    .copyWith(fontFamily: "Roboto"),
+                              ),
                             ),
                             kLargeVerticalSpacing,
                             Row(
