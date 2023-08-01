@@ -69,7 +69,24 @@ class DynamicScreen extends StatelessWidget {
                       "Topics:",
                       style: bodySmallText(context),
                     ),
-                    kTinyVerticalSpacing
+                    kExtraExtraLargeVerticalSpacing,
+                    Divider(
+                      color: Colors.black,
+                    ),
+                    kSmallVerticalSpacing,
+                    Text(
+                      "Helpful Links:",
+                      style: bodySmallText(context)
+                    ),
+                    kExtraExtraLargeVerticalSpacing,
+                    Divider(
+                      color: Colors.black,
+                    ),
+                    kSmallVerticalSpacing,
+                    Text(
+                      "Helpful Suggestions By Fellow Students"
+                    ),
+                    kTinyVerticalSpacing,
                   ]
               ),
             )
